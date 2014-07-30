@@ -16,10 +16,8 @@ import org.sample.osgi.util.api.bar.IBarService;
  */
 public class FooDSComponent {
 
-    private IBarService _barService;
     protected void activate(ComponentContext ctxt){
         System.out.println("Activating " + this.getClass().getName());
-//        _barService.sayHello();
     }
 
     protected void deactivate(ComponentContext ctxt) {
@@ -28,8 +26,7 @@ public class FooDSComponent {
 
     public void setBarService(IBarService barService) {
         System.out.println("Declarative Service " + barService.getClass().getName() + " is available");
-        _barService = barService;
-        _barService.sayHello();
+        barService.sayHello();
 
     }
 
